@@ -1,0 +1,187 @@
+[
+  {
+    "description": "Autoimmunitat",
+    "id": "25AUTOIM",
+    "parentId": null,
+    "items": [
+      {"id": "A02385", "description": "Anti-cardiolipina (IgG)-Sèrum", "order": "363100"},
+      {"id": "A02485", "description": "Anti-cardiolipina (IgM)-Sèrum", "order": "363200"}
+    ],
+    "order": "0025"
+  },
+  {
+    "description": "Genèriques",
+    "id": "3508d1a3-24e1-349b-01fe-57433b1aca56",
+    "parentId": null,
+    "items": [
+      {"id": "BEecfv", "description": "", "order": "9999999999999999"},
+      {
+        "id": "C02066",
+        "description": "Temps de protrombina (TP)-Plasma",
+        "order": "9999999999999999"
+      },
+      {
+        "id": "C02266",
+        "description": "Temps de protrombina (INR)-Plasma",
+        "order": "9999999999999999"
+      },
+      {
+        "id": "C02666",
+        "description": "Temps de cefalina (TTPA)-Plasma",
+        "order": "9999999999999999"
+      },
+      {"id": "C15266", "description": "Proteïna C (activitat)-Plasma", "order": "9999999999999999"},
+      {"id": "DTRU010", "description": "", "order": "9999999999999999"},
+      {"id": "ERI%", "description": "", "order": "9999999999999999"},
+      {
+        "id": "MMD09ASMT",
+        "description": "Bordetella pertussis, detecció per PCR: aspirat nasofaringi",
+        "order": "9999999999999999"
+      },
+      {
+        "id": "MMD31PSXX",
+        "description": "Virus de l'Hepatitis C: PCR en temps real (càrrega vírica)-Plasma",
+        "order": "9999999999999999"
+      },
+      {
+        "id": "W18161",
+        "description": "Filtrat glomerular (estimació segons CKD-EPI)-Sèrum",
+        "order": "9999999999999999"
+      }
+    ],
+    "order": "9999999999999999"
+  },
+  {
+    "description": "Hematologia",
+    "id": "1HEMO",
+    "parentId": null,
+    "items": [
+      {"id": "C01466", "description": "Anticoagulant lúpic-Plasma", "order": "018600"},
+      {"id": "C01666", "description": "Antitrombina III (cromogènic)-Plasma", "order": "019100"},
+      {
+        "id": "C06466",
+        "description": "Fibrinogen (derivat amb el temps de protrombina)-Plasma",
+        "order": "015400"
+      },
+      {
+        "id": "C08366",
+        "description": "Proteïna S (no unida proteïna) (immunoturbidimetria)-Plasma",
+        "order": "019300"
+      },
+      {"id": "C11266", "description": "Pla-  Temps pacient (T.protrombina)", "order": "014200"},
+      {"id": "C11366", "description": "Pla-  Raó (T.protrombina)", "order": "014400"},
+      {"id": "C11466", "description": " Activitat %  (T.protrombina)-Plasma", "order": "014600"},
+      {"id": "C12366", "description": "Tasa protrombina (INR)", "order": "015200"},
+      {"id": "C14166", "description": "Temps control (TTPA)-Plasma", "order": "013400"},
+      {"id": "C14266", "description": "Temps pacient (TTPA)-Plasma", "order": "013600"},
+      {"id": "C14366", "description": "Raó (TTPA)-Plasma", "order": "013800"},
+      {"id": "H10172", "description": "Hemoglobina", "order": "000400"},
+      {"id": "H10272", "description": "Eritròcits, c.", "order": "000200"},
+      {"id": "H10372", "description": "Hematòcrit", "order": "000600"},
+      {"id": "H10472", "description": "Volum corpuscular mitja", "order": "000800"},
+      {"id": "H10572", "description": "A.D.E.", "order": "001400"},
+      {"id": "H10613", "description": "C.H.C.M.", "order": "001200"},
+      {"id": "H10713", "description": "Hemoglobina corpuscular mitja", "order": "001000"},
+      {"id": "H10872", "description": "Leucòcits, c.", "order": "001600"},
+      {"id": "H10940", "description": "Neutròfils, c.", "order": "002000"},
+      {"id": "H11040", "description": "Neutròfils, f.", "order": "002200"},
+      {"id": "H11140", "description": "Limfòcits, c.", "order": "002400"},
+      {"id": "H11240", "description": "Limfòcits, f.", "order": "002600"},
+      {"id": "H11340", "description": "Monòcits, c.", "order": "002800"},
+      {"id": "H11440", "description": "Monòcits, f.", "order": "003000"},
+      {"id": "H11540", "description": "Eosinofils, c.", "order": "003200"},
+      {"id": "H11640", "description": "Eosinòfils, f.", "order": "003400"},
+      {"id": "H11740", "description": "Basofils, c.", "order": "003600"},
+      {"id": "H11840", "description": "Basòfils, f.", "order": "003800"},
+      {"id": "H12172", "description": "Plaquetes", "order": "004400"},
+      {"id": "H12372", "description": "Volum plaquetari mig", "order": "004800"},
+      {"id": "H14672", "description": "Eritroblastes", "order": "011600"}
+    ],
+    "order": "0001"
+  },
+  {
+    "description": "Genètica",
+    "id": "118GENETIC",
+    "parentId": null,
+    "items": [
+      {
+        "id": "G20711",
+        "description": "Trombofília [protrombina]-Mutació G20210A factor II coagulació-DNA sang",
+        "order": "467900"
+      },
+      {
+        "id": "G20811",
+        "description": "trombofília-mutació gen factor V Leiden R506Q-DNA sang",
+        "order": "468000"
+      }
+    ],
+    "order": "0118"
+  },
+  {
+    "description": "Bioquímica",
+    "id": "3BIOQUI",
+    "parentId": null,
+    "items": [
+      {"id": "Q02185", "description": "Alanina-aminotransferasa (GPT)-Sèrum", "order": "067400"},
+      {"id": "Q02258", "description": "Quocient Albúmina / Creatinini-Orina", "order": "114800"},
+      {"id": "Q02458", "description": "Albúmina-Orina", "order": "114700"},
+      {"id": "Q02485", "description": "Albúmina-Sèrum", "order": "062400"},
+      {
+        "id": "Q06285",
+        "description": "Antigen específic de la pròstata (PSA)-Sèrum",
+        "order": "084800"
+      },
+      {"id": "Q07585", "description": "Aspartat-aminotransferasa (GOT)-Sèrum", "order": "066800"},
+      {"id": "Q08585", "description": "Bilirubina-Sèrum", "order": "064800"},
+      {"id": "Q12785", "description": "Colesterol d'HDL -Sèrum", "order": "059800"},
+      {
+        "id": "Q12985",
+        "description": "Colesterol d'LDL (càlcul Friedewald)-Sèrum",
+        "order": "060500"
+      },
+      {"id": "Q13285", "description": "Colesterol-Sèrum", "order": "059600"},
+      {"id": "Q15158", "description": "Creatinina orina", "order": "116800"},
+      {"id": "Q15185", "description": "Creatinini-Sèrum", "order": "048400"},
+      {"id": "Q30385", "description": "Fosfatasa alcalina-Sèrum", "order": "067900"},
+      {"id": "Q31585", "description": "Gamma-glutamiltransferasa-Sèrum", "order": "067700"},
+      {"id": "Q32036", "description": "Hemoglobina glicada (A1c)-Sang", "order": "046700"},
+      {"id": "Q32685", "description": "Glucosa-Sèrum", "order": "045900"},
+      {"id": "Q34266", "description": "Homocisteïna-Sèrum", "order": "061500"},
+      {"id": "Q35275", "description": "Calci iònic-Sang venosa", "order": "056000"},
+      {"id": "Q35485", "description": "Potassi-Sèrum", "order": "052100"},
+      {"id": "Q35585", "description": "Sodi-Sèrum", "order": "051000"},
+      {"id": "Q36175", "description": "Lactat-Sang venosa", "order": "054000"},
+      {"id": "Q46585", "description": "Proteïna-Sèrum", "order": "062000"},
+      {"id": "Q53585", "description": "Triglicèrid-Sèrum", "order": "059100"},
+      {"id": "Q54485", "description": "Urat-Sèrum", "order": "050500"},
+      {"id": "Q54685", "description": "Urea-Sèrum", "order": "047300"},
+      {"id": "W05036", "description": "Hemoglobina A1c (IFCC)", "order": "046800"}
+    ],
+    "order": "0003"
+  },
+  {
+    "description": "Equilibri acidobàsic",
+    "id": "2EQUILIB",
+    "parentId": null,
+    "items": [
+      {"id": "Q71175", "description": "Pressio parcial de CO2", "order": "041500"},
+      {"id": "Q71275", "description": "Pressio parcial d'oxigen", "order": "041900"},
+      {"id": "Q71375", "description": "pH", "order": "041300"},
+      {"id": "Q71475", "description": "Bicarbonat actual", "order": "042100"},
+      {"id": "Q71575", "description": "Exces de base", "order": "042500"},
+      {"id": "Q71675", "description": "Saturacio oxigen", "order": "042700"},
+      {
+        "id": "W05175",
+        "description": "vSan— Diòxid de carboni (total); c.subst",
+        "order": "041700"
+      },
+      {
+        "id": "W05275",
+        "description": "vSan— Hidrogencarbonat; c.subst.(estandar)",
+        "order": "042300"
+      },
+      {"id": "W16775", "description": "vSan— Saturació d'oxigen", "order": "043300"}
+    ],
+    "order": "0002"
+  }
+]
