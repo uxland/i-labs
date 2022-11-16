@@ -1,0 +1,18 @@
+:host {
+  min-height: 1px;
+  height: 100%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  header {
+    padding: 16px 24px;
+    background-color: #274073;
+
+    h1 {
+      color: #fff;
+      font-weight: 500;
+      margin: 0;
+    }
+  }
+}
