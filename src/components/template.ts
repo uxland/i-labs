@@ -39,6 +39,9 @@ export const template = (props: ILabs) =>
       </div>
       <div class="wrapper-right">
         <div class="final-text" contenteditable="true">${unsafeHTML(props.computeData())}</div>
+        <vaadin-button id="copy-btn" @click=${props._copy} theme="primary"
+          >Copiar resultats</vaadin-button
+        >
       </div>
     </div>
   </div>`;

@@ -3,14 +3,14 @@ body {
   overflow: hidden;
   font-size: 14px;
   background-color: #f5f6fa;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   pointer-events: auto !important;
 }
 
 html {
   font-size: 14px;
   overflow: hidden;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 html input {

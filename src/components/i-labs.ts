@@ -1,6 +1,6 @@
 import {Checkbox} from '@vaadin/checkbox';
 import {LitElement, css, html, unsafeCSS} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
+import {customElement, property, state} from 'lit/decorators.js';
 import {labData} from '../data/labData';
 import {IPatientGridGroup, IPatientGridItem} from '../interfaces';
 import styles from './styles.scss';
@@ -16,14 +16,30 @@ export class ILabs extends LitElement {
     ${unsafeCSS(styles)}
   `;
 
-  @property()
+  @state()
   labData: IPatientGridGroup[] = [];
 
-  @property()
+  @state()
   filteredLabData: IPatientGridGroup[] = [];
 
   _start() {
     this.labData = labData;
+  }
+
+  _copy() {
+    const value = this.computeData();
+    let container = document.createElement('div');
+    container.innerHTML = value;
+    container.style.position = 'fixed';
+    container.style.pointerEvents = 'none';
+    container.style.opacity = 0;
+    document.body.appendChild(container);
+    window.getSelection().removeAllRanges();
+    var range = document.createRange();
+    range.selectNode(container);
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    document.body.removeChild(container);
   }
 
   _groupCheckboxChanged(groupId: string, checked: boolean) {
@@ -69,13 +85,13 @@ export class ILabs extends LitElement {
             (filteredGroup: IPatientGridGroup) => filteredGroup.id !== group.id
           );
       });
-      console.log(this.filteredLabData.filter(pg => pg.items?.length > 0));
+      this.filteredLabData.filter(pg => pg.items?.length > 0);
     }, 300);
   }
 
   computeData() {
     return this.filteredLabData.reduce((acc, curr) => {
-      const str = `<span><b>${curr.description}</b></span></br>${curr.items?.reduce(
+      const str = `<span><strong>${curr.description}</strong></span></br>${curr.items?.reduce(
         (acc, item: IPatientGridItem) =>
           acc.concat(
             `<span style="color:#29a1a6">${item.description.slice(0, 4)}</span>: ${

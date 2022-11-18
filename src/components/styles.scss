@@ -81,6 +81,13 @@
         padding: 12px;
         outline: none;
       }
+
+      #copy-btn {
+        width: fit-content;
+        align-self: center;
+        background: #ce603a;
+        cursor: pointer;
+      }
     }
   }
 }
