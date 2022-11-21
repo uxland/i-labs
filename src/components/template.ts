@@ -12,7 +12,7 @@ export const template = (props: ILabs) =>
       >Veure analítica</vaadin-button
     >
     <div class="wrapper">
-      <div class="groups">
+      <div class="wrapper__left">
         <vaadin-checkbox
           ?hidden=${!props.labData?.length}
           id="altered-results"
@@ -20,31 +20,34 @@ export const template = (props: ILabs) =>
           .checked=${props.alteredResults}
           @change=${(e: any) => props._groupAlteredResultsChanged(e.currentTarget.checked)}
         ></vaadin-checkbox>
-        ${props.labData.map(
-          (group: IPatientGridGroup) =>
-            html`<div class="group" data-group=${group.id} id="group-${group.id}">
-              <div class="name">
-                <vaadin-checkbox
-                  id="${group.id}"
-                  label="${group.description}"
-                  @click=${(e: any) =>
-                    props._groupCheckboxChanged(group.id, e.currentTarget.checked)}
-                ></vaadin-checkbox>
-              </div>
-              <div class="items">
-                ${group.items?.map(
-                  (item: IPatientGridItem) =>
-                    html`<vaadin-checkbox
-                      id="${item.id}"
-                      @click=${props._itemCheckboxChanged}
-                      label="${item.description}"
-                    ></vaadin-checkbox>`
-                )}
-              </div>
-            </div>`
-        )}
+        <div class="groups">
+          ${props.labData.map(
+            (group: IPatientGridGroup) =>
+              html`<div class="group" data-group=${group.id} id="group-${group.id}">
+                <div class="name">
+                  <vaadin-checkbox
+                    id="${group.id}"
+                    label="${group.description}"
+                    @click=${(e: any) =>
+                      props._groupCheckboxChanged(group.id, e.currentTarget.checked)}
+                  ></vaadin-checkbox>
+                </div>
+                <div class="items">
+                  ${group.items?.map(
+                    (item: IPatientGridItem) =>
+                      html`<vaadin-checkbox
+                        id="${item.id}"
+                        @click=${props._itemCheckboxChanged}
+                        label="${item.description}"
+                      ></vaadin-checkbox>`
+                  )}
+                </div>
+              </div>`
+          )}
+        </div>
       </div>
-      <div class="wrapper-right" ?hidden=${!props.labData?.length}>
+
+      <div class="wrapper__right" ?hidden=${!props.labData?.length}>
         <div class="final-text" contenteditable="true">${unsafeHTML(props.computeData())}</div>
         <vaadin-button id="copy-btn" @click=${props._copy} theme="primary"
           >Copiar resultats</vaadin-button
