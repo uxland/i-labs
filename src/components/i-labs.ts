@@ -1,6 +1,6 @@
 import {Checkbox} from '@vaadin/checkbox';
 import {LitElement, css, html, unsafeCSS} from 'lit';
-import {customElement, property, state} from 'lit/decorators.js';
+import {customElement, state} from 'lit/decorators.js';
 import {labData} from '../data/labData';
 import {IPatientGridGroup, IPatientGridItem} from '../interfaces';
 import styles from './styles.scss';
@@ -35,12 +35,12 @@ export class ILabs extends LitElement {
     container.innerHTML = value;
     container.style.position = 'fixed';
     container.style.pointerEvents = 'none';
-    container.style.opacity = 0;
+    container.style.opacity = '0';
     document.body.appendChild(container);
-    window.getSelection().removeAllRanges();
+    (window as any).getSelection().removeAllRanges();
     var range = document.createRange();
     range.selectNode(container);
-    window.getSelection().addRange(range);
+    (window as any).getSelection().addRange(range);
     document.execCommand('copy');
     document.body.removeChild(container);
   }
@@ -64,13 +64,13 @@ export class ILabs extends LitElement {
 
   _calculateSelectedItems() {
     setTimeout(() => {
-      this.shadowRoot?.querySelectorAll('.group').forEach((groupElement: Element) => {
+      this.shadowRoot?.querySelectorAll('.group').forEach((groupElement: Element | any) => {
         const group = this.labData.find(
           (g: IPatientGridGroup) => g.id === groupElement.dataset.group
         );
         const selectedCheckboxes = Array.from(
           groupElement.querySelectorAll('vaadin-checkbox')
-        ).filter((c: Checkbox) => c.checked);
+        ).filter((c: Checkbox | any) => c.checked);
         if (selectedCheckboxes.length) {
           const filteredGroup = this.filteredLabData.find(
             filteredGroup => filteredGroup.id === group?.id
@@ -78,7 +78,7 @@ export class ILabs extends LitElement {
           const selectedItems = group?.items?.filter(
             (item: IPatientGridItem) =>
               selectedCheckboxes.findIndex(
-                (selectedCheckbox: Checkbox) => selectedCheckbox.id === item.id
+                (selectedCheckbox: Checkbox | any) => selectedCheckbox.id === item.id
               ) != -1
           );
           if (filteredGroup) filteredGroup.items = selectedItems;
@@ -89,10 +89,10 @@ export class ILabs extends LitElement {
             } as any);
         } else
           this.filteredLabData = this.filteredLabData.filter(
-            (filteredGroup: IPatientGridGroup) => filteredGroup.id !== group.id
+            (filteredGroup: IPatientGridGroup) => filteredGroup.id !== group?.id
           );
       });
-      this.filteredLabData.filter(pg => pg.items?.length > 0);
+      this.filteredLabData.filter((pg: IPatientGridGroup | any) => pg?.items?.length > 0);
     }, 300);
   }
 
