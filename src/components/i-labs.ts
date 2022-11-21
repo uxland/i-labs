@@ -22,6 +22,9 @@ export class ILabs extends LitElement {
   @state()
   filteredLabData: IPatientGridGroup[] = [];
 
+  @state()
+  alteredResults: boolean = false;
+
   _start() {
     this.labData = labData;
   }
@@ -49,6 +52,10 @@ export class ILabs extends LitElement {
       ?.querySelectorAll('vaadin-checkbox')
       .forEach((c: Checkbox) => (c.checked = !checked));
     this._calculateSelectedItems();
+  }
+
+  _groupAlteredResultsChanged(checked: boolean) {
+    this.alteredResults = checked;
   }
 
   _itemCheckboxChanged() {
@@ -91,17 +98,35 @@ export class ILabs extends LitElement {
 
   computeData() {
     return this.filteredLabData.reduce((acc, curr) => {
-      const str = `<span><strong>${curr.description}</strong></span></br>${curr.items?.reduce(
+      const str = `<strong><u>${curr.description}</u></strong></br>${curr.items?.reduce(
         (acc, item: IPatientGridItem) =>
           acc.concat(
-            `<span style="color:#29a1a6">${item.description.slice(0, 4)}</span>: ${
-              item.samples[0].value
-            } ${item.samples[0].unit || ''} `,
+            this._isAlteredResult(item.samples[0].normality)
+              ? this._getStrongItem(item)
+              : this._getItem(item),
             ' | '
           ),
         ''
       )}</br></br>`;
       return acc.concat(str);
     }, '');
+  }
+
+  _isAlteredResult(normality: string) {
+    return this.alteredResults && (normality === 'L' || normality === 'H');
+  }
+
+  _getStrongItem(item: IPatientGridItem) {
+    return `<span><strong>${item.description.slice(0, 4)}: ${item.samples[0].value} ${
+      item.samples[0].unit || ''
+    }</strong></span> `;
+  }
+
+  // ${this._isAlteredResult(item.samples[0].normality)}
+
+  _getItem(item: IPatientGridItem) {
+    return `<span>${item.description.slice(0, 4)}: ${item.samples[0].value} ${
+      item.samples[0].unit || ''
+    }</span> `;
   }
 }

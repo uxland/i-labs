@@ -7,6 +7,20 @@
   min-height: 1px;
   height: 100%;
 }
+
+*[hidden] {
+  display: none !important;
+}
+
+.variable-title {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: 600;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -45,6 +59,15 @@
       overflow: auto;
       gap: 12px;
 
+      #altered-results {
+        width: fit-content;
+        background: #d2382840;
+        border-radius: 4px;
+        padding: 4px;
+        color: #f32813;
+        font-weight: 600;
+      }
+
       .group {
         display: flex;
         flex-direction: column;
@@ -77,6 +100,7 @@
 
       .final-text {
         @include border;
+        background: #fff;
         min-height: 300px;
         padding: 12px;
         outline: none;

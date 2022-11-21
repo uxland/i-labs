@@ -13,6 +13,13 @@ export const template = (props: ILabs) =>
     >
     <div class="wrapper">
       <div class="groups">
+        <vaadin-checkbox
+          ?hidden=${!props.labData?.length}
+          id="altered-results"
+          label="Resultats alterats"
+          .checked=${props.alteredResults}
+          @change=${(e: any) => props._groupAlteredResultsChanged(e.currentTarget.checked)}
+        ></vaadin-checkbox>
         ${props.labData.map(
           (group: IPatientGridGroup) =>
             html`<div class="group" data-group=${group.id} id="group-${group.id}">
@@ -37,7 +44,7 @@ export const template = (props: ILabs) =>
             </div>`
         )}
       </div>
-      <div class="wrapper-right">
+      <div class="wrapper-right" ?hidden=${!props.labData?.length}>
         <div class="final-text" contenteditable="true">${unsafeHTML(props.computeData())}</div>
         <vaadin-button id="copy-btn" @click=${props._copy} theme="primary"
           >Copiar resultats</vaadin-button

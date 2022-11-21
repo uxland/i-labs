@@ -2,7 +2,7 @@ body {
   margin: 0;
   overflow: hidden;
   font-size: 14px;
-  background-color: #f5f6fa;
+  background-color: #fff;
   font-family: 'Montserrat', sans-serif;
   pointer-events: auto !important;
 }
